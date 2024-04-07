@@ -1,0 +1,62 @@
+/* class-list.component.css */
+.class-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.class-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 300px;
+  transition: box-shadow 0.3s ease;
+}
+
+.class-card:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.class-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.class-info {
+  padding: 15px;
+}
+
+.enroll-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-top: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.enroll-button:hover {
+  background-color: #0056b3;
+}
+
+.split-screen {
+  display: flex;
+  height: 100vh; /* Take full height of the viewport */
+}
+
+.left-panel, .right-panel {
+  flex: 1; /* Each panel takes up equal width */
+  overflow: auto; /* Adds scroll to each panel if content overflows */
+}
+
+/* Additional styling for panels */
+.left-panel {
+  /* Style for left panel */
+}
+
+.right-panel {
+  /* Style for right panel */
+}

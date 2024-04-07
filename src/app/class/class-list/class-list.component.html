@@ -1,0 +1,25 @@
+<!-- class-list.component.html -->
+<!-- <div class="class-list">
+  <div *ngFor="let class of classes" class="class-card">
+    <img [src]="class.thumbnailUrl" alt="Class Image" class="class-image">
+    <div class="class-info">
+      <h3>{{ class.title }}</h3>
+      <p>Instructor: {{ class.instructor }}</p>
+      <p>Schedule: {{ class.schedule }}</p>
+      <p>Duration: {{ class.duration }} minutes</p>
+      <p>Enrolled: {{ class.enrollmentCount }} / {{ class.capacity }}</p>
+      <p>Fee: ${{ class.fee }}</p>
+    </div>
+    <button class="enroll-button">Schedule Now</button>
+  </div>
+</div> -->
+
+<div class="split-screen">
+  <div class="left-panel">
+    <app-schedule-stepper></app-schedule-stepper>
+  </div>
+  <div class="right-panel">
+    <!-- Content for the right panel -->
+    <app-tabs></app-tabs>
+  </div>
+</div>

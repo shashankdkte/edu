@@ -1,0 +1,31 @@
+
+.confirmation-details {
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.confirmation-details h2 {
+  color: #333;
+}
+
+.confirmation-details table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.confirmation-details table td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.confirmation-details table td:first-child {
+  font-weight: bold;
+  min-width: 150px;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+}

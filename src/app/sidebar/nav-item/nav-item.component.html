@@ -1,0 +1,14 @@
+<li class="nav-item" [class.menu-open]="menu.children?.length" [routerLinkActive]="['active']"
+    [routerLinkActiveOptions]="{exact: true}">
+  <a [routerLink]="menu.link" routerLinkActive="active" class="nav-link">
+    <i class="nav-icon" [class]="menu.icon"></i>
+    <p>
+      {{ menu.text }}
+      <i class="right fas fa-angle-left" *ngIf="menu.children?.length"></i>
+      <span *ngIf="menu.badge" class="right badge" [class]="menu.badgeClass">{{ menu.badge }}</span>
+    </p>
+  </a>
+  <ul class="nav nav-treeview" *ngIf="menu.children?.length">
+    <app-nav-item *ngFor="let childMenu of menu.children" [menu]="childMenu"></app-nav-item>
+  </ul>
+</li>

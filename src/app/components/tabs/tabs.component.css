@@ -1,0 +1,145 @@
+mat-tab-group {
+  width: 100%;
+}
+.class-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 20px;
+}
+
+.class-card {
+  max-width: 300px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.class-card:hover {
+  transform: scale(1.05);
+}
+
+.vertical-tabs-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.mat-tab-group {
+  flex-grow: 1;
+  max-width: 70%; /* Adjust based on your layout needs */
+}
+
+.mat-tab-labels {
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-tab-label {
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.mat-tab-body-wrapper {
+  width: 100%;
+}
+
+.mat-list-item {
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.mat-list-item.active, .mat-list-item:hover {
+  border-color: #3f51b5;
+}
+
+.class-card {
+  margin: 20px;
+  overflow: hidden;
+}
+
+.card-header-content {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Adjust the gap as needed */
+  padding: 16px; /* Provides padding around the header content */
+}
+
+mat-icon {
+  font-size: 40px;
+  height: 40px;
+  width: 40px;
+}
+
+.class-details-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.class-details-table td {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.class-card {
+  margin: 20px;
+  overflow: hidden;
+}
+
+.card-header-layout {
+  display: flex;
+  align-items: start;
+}
+
+mat-icon {
+  font-size: 40px;
+  height: 40px;
+  width: 40px;
+  margin-right: 16px; /* Adjust the right margin as needed */
+}
+
+.header-text {
+  flex-grow: 1;
+}
+
+mat-card-title {
+  margin-bottom: 0;
+}
+
+mat-card-subtitle {
+  margin-top: 0;
+}
+
+.class-details-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.class-details-table td {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.class-card {
+  /* Other styles... */
+}
+
+.card-header-content {
+  display: flex;
+  align-items: center;
+}
+
+.card-icon-container {
+  /* Adjust padding as needed to ensure space around the icon */
+  padding-right: 16px; 
+}
+
+.card-title-container {
+  flex-grow: 1;
+}
+
+mat-icon {
+  font-size: 40px; /* Icon size */
+  /* If you want to add some margin to the icon or any other styling, add here */
+}
+
+/* Add other styles as required */

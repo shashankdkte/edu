@@ -1,0 +1,120 @@
+<mat-tab-group>
+  <mat-tab label="Ongoing Classes">
+    <div *ngFor="let class of ongoingClasses" class="class-card-container">
+      <mat-card class="class-card">
+        <mat-card-header>
+          <div class="card-header-content">
+            <div class="card-icon-container">
+              <mat-icon aria-hidden="false" aria-label="Class icon">school</mat-icon>
+            </div>
+            <div class="card-title-container">
+              <mat-card-title>{{ class.title }}</mat-card-title>
+              <mat-card-subtitle>{{ class.instructor }}</mat-card-subtitle>
+            </div>
+          </div>
+        </mat-card-header>
+        <mat-card-content>
+          <table class="class-details-table">
+            <tbody>
+              <tr>
+                <td>Schedule:</td>
+                <td>{{ class.schedule }}</td>
+              </tr>
+              <tr>
+                <td>Duration:</td>
+                <td>{{ class.duration }} minutes</td>
+              </tr>
+              <tr>
+                <td>Enrollment:</td>
+                <td>{{ class.enrollmentCount }} / {{ class.capacity }}</td>
+              </tr>
+              <tr>
+                <td>Fee:</td>
+                <td>${{ class.fee }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+  </mat-tab>
+  <mat-tab label="Completed Classes">
+    <div *ngFor="let class of completedClasses" class="class-card-container">
+      <mat-card class="class-card">
+        <mat-card-header>
+          <div class="card-header-content">
+            <div class="card-icon-container">
+              <mat-icon aria-hidden="false" aria-label="Class icon">school</mat-icon>
+            </div>
+            <div class="card-title-container">
+              <mat-card-title>{{ class.title }}</mat-card-title>
+              <mat-card-subtitle>{{ class.instructor }}</mat-card-subtitle>
+            </div>
+          </div>
+        </mat-card-header>
+        <mat-card-content>
+          <table class="class-details-table">
+            <tbody>
+              <tr>
+                <td>Schedule:</td>
+                <td>{{ class.schedule }}</td>
+              </tr>
+              <tr>
+                <td>Duration:</td>
+                <td>{{ class.duration }} minutes</td>
+              </tr>
+              <tr>
+                <td>Enrollment:</td>
+                <td>{{ class.enrollmentCount }} / {{ class.capacity }}</td>
+              </tr>
+              <tr>
+                <td>Fee:</td>
+                <td>${{ class.fee }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-tab>
+  <mat-tab label="Upcoming Classes">
+    <div *ngFor="let class of upcomingClasses" class="class-card-container">
+      <mat-card class="class-card">
+        <mat-card-header>
+          <div class="card-header-content">
+            <div class="card-icon-container">
+              <mat-icon aria-hidden="false" aria-label="Class icon">school</mat-icon>
+            </div>
+            <div class="card-title-container">
+              <mat-card-title>{{ class.title }}</mat-card-title>
+              <mat-card-subtitle>{{ class.instructor }}</mat-card-subtitle>
+            </div>
+          </div>
+        </mat-card-header>
+        <mat-card-content>
+          <table class="class-details-table">
+            <tbody>
+              <tr>
+                <td>Schedule:</td>
+                <td>{{ class.schedule }}</td>
+              </tr>
+              <tr>
+                <td>Duration:</td>
+                <td>{{ class.duration }} minutes</td>
+              </tr>
+              <tr>
+                <td>Enrollment:</td>
+                <td>{{ class.enrollmentCount }} / {{ class.capacity }}</td>
+              </tr>
+              <tr>
+                <td>Fee:</td>
+                <td>${{ class.fee }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-tab>
+</mat-tab-group>

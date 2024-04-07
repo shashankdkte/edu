@@ -1,0 +1,70 @@
+/* Styling for the stepper */
+mat-vertical-stepper {
+  .mat-vertical-stepper-header {
+    padding: 8px; /* Adjust the padding as necessary */
+  }
+  
+  .mat-form-field {
+    width: 100%; /* Ensures form fields take up full width */
+    max-width: 600px; /* Or set to limit the max width */
+    margin: 0 auto; /* Centers the form field if smaller than max width */
+  }
+
+  .mat-vertical-content-container {
+    padding: 16px; /* Adjust padding around content */
+  }
+
+  button[mat-button] {
+    margin-top: 20px; /* Space above the button */
+    display: block; /* If you want to make it a block element */
+    width: fit-content; /* Only as wide as its content */
+    margin-left: auto; /* Align to the right */
+  }
+}
+
+/* Global styles for Material form fields, adjust as necessary */
+.mat-form-field {
+  margin-bottom: 16px; /* Space below each form field */
+}
+
+/* Error state styling if needed */
+.mat-form-field.mat-form-field-invalid .mat-form-field-ripple {
+  background-color: #f44336; /* Red color if this is your error color */
+}
+
+/* You can also adjust the space between the step icons and content */
+.mat-vertical-stepper-header {
+  margin-bottom: 24px; /* Space between the step header and content */
+}
+/* Ensure that Angular Material form fields take full width */
+mat-form-field {
+  width: 100%; /* This should stretch the form field to full width */
+}
+
+/* Specific to the stepper content container if needed */
+.mat-vertical-content-container {
+  width: 100%; /* Ensures the container takes full width */
+}
+
+/* If there are any additional wrappers around your form fields, ensure they also have width set to 100% */
+.form-field-wrapper { /* This is a hypothetical class for your wrapper */
+  width: 100%;
+}
+
+/* Apply the width to inputs within form fields as well */
+mat-form-field mat-input-element {
+  width: 100%;
+}
+
+/* ... existing styles ... */
+
+/* Style for dynamic task inputs */
+.task-input {
+  display: flex;
+  align-items: center;
+}
+
+/* Style for the remove button */
+.remove-task-btn {
+  margin-left: 8px;
+}

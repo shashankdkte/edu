@@ -1,0 +1,126 @@
+<mat-vertical-stepper (selectionChange)="stepperSelectionChanged($event)" linear #stepper>
+  <!-- First Question -->
+  <mat-step [formGroup]="firstFormGroup">
+    <ng-template matStepLabel>Let's set up your class</ng-template>
+    <mat-form-field appearance="fill">
+      <mat-label>What's the title of your class?</mat-label>
+      <input matInput placeholder="e.g., Introduction to Programming" formControlName="title" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Who is Instrutor?</mat-label>
+      <input matInput placeholder="e.g., Arwin Schedule" formControlName="instructor" required>
+    </mat-form-field>
+    <button mat-button matStepperNext>Continue</button>
+  </mat-step>
+
+  <!-- Second Question -->
+  <mat-step [formGroup]="secondFormGroup">
+    <ng-template matStepLabel>Add Your Class Tasks</ng-template>
+    <div formArrayName="tasks">
+      <div *ngFor="let task of tasks.controls; let i = index;" [formGroupName]="i">
+        <mat-form-field appearance="fill">
+          <mat-label>Task</mat-label>
+          <input matInput formControlName="taskName" placeholder="Task description">
+          <button mat-icon-button matSuffix *ngIf="tasks.length > 1" (click)="removeTask(i)">
+            <mat-icon>remove_circle</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+    </div>
+    <button mat-button (click)="addTask()">Add Another Task</button>
+  </mat-step>
+
+  <!-- Third Question -->
+  <mat-step [formGroup]="thirdFormGroup">
+    <ng-template matStepLabel>Class Schedule</ng-template>
+    <mat-form-field appearance="fill">
+      <mat-label>Class Date</mat-label>
+      <input matInput [matDatepicker]="classDatePicker" formControlName="classDateCtrl" placeholder="Choose a date"
+             required>
+      <mat-datepicker-toggle matSuffix [for]="classDatePicker"></mat-datepicker-toggle>
+      <mat-datepicker #classDatePicker></mat-datepicker>
+    </mat-form-field>
+
+    <!-- Time Picker (there is no default time picker in Angular Material, so you use a standard input) -->
+    <mat-form-field appearance="fill">
+      <mat-label>Timing</mat-label>
+      <input matInput formControlName="classTimeCtrl" placeholder="HH:MM AM/PM" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Schedule</mat-label>
+      <input matInput placeholder="e.g., Monday to Wednesday" formControlName="schedule" required>
+    </mat-form-field>
+    <button mat-button matStepperNext>Continue</button>
+  </mat-step>
+
+  <!-- Fourth Question -->
+  <mat-step [formGroup]="fourthFormGroup">
+    <ng-template matStepLabel>Class Resources</ng-template>
+    <mat-form-field appearance="fill">
+      <mat-label>Duration</mat-label>
+      <input matInput placeholder="e.g., 50hrs" formControlName="duration" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Capacity</mat-label>
+      <input matInput placeholder="e.g., 25" formControlName="capacity" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Fee</mat-label>
+      <input matInput placeholder="e.g.$25" formControlName="fee" required>
+    </mat-form-field>
+    <button mat-button matStepperNext>Continue</button>
+  </mat-step>
+
+  <!-- Fifth Question -->
+  <mat-step [formGroup]="fifthFormGroup">
+    <ng-template matStepLabel>Confirmation</ng-template>
+    <p>Please review all class details and confirm.</p>
+    <mat-checkbox formControlName="confirmationCtrl">I confirm that all details are correct.</mat-checkbox>
+    <button mat-button (click)="finalize()">Finish</button>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Review and Confirm</ng-template>
+    <div class="confirmation-details">
+      <h2>Confirm your class details:</h2>
+      <table>
+        <tr>
+          <td><strong>Title:</strong></td>
+          <td>{{ compiledData.title }}</td>
+        </tr>
+        <tr>
+          <td><strong>Tasks:</strong></td>
+          <td>
+            <ul>
+              <li *ngFor="let task of compiledData.tasks">{{ task.taskName }}</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Class Date:</strong></td>
+          <td>{{ compiledData.classDateCtrl | date }}</td>
+        </tr>
+        <tr>
+          <td><strong>Schedule:</strong></td>
+          <td>{{ compiledData.schedule }}</td>
+        </tr>
+        <tr>
+          <td><strong>Duration:</strong></td>
+          <td>{{ compiledData.duration }}</td>
+        </tr>
+        <tr>
+          <td><strong>Capacity :</strong></td>
+          <td>{{ compiledData.capacity }}</td>
+        </tr>
+        <tr>
+          <td><strong>Fee :</strong></td>
+          <td>{{ compiledData.fee }}</td>
+        </tr>
+        <!-- Add more rows for additional properties as needed -->
+      </table>
+      <button mat-button (click)="finalize()">Confirm and Finish</button>
+    </div>
+  </mat-step>
+
+
+</mat-vertical-stepper>

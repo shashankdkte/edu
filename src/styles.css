@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: "Poppins", "Helvetica Neue", sans-serif; }
+mat-toolbar, .mat-card, .mat-dialog-container {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* Selects all elements that contain 'mat' in their class attribute */
+[class*="mat"]:not(mat-icon):not(.mat-icon) {
+  /* Your styles here */
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -0.25px;
+  
+}
+::ng-deep .mat-tab-label {
+  letter-spacing: -0.5px; /* Adjust the value as needed */
+}
+/* For WebKit browsers like Chrome and Safari */
+::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #eee; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners */
+}
